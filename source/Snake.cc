@@ -74,7 +74,7 @@ void Snake::Init ()
   {
     it->x = width / 2 + it - snakeBody.begin();
     it->y = height / 2;
-    map[it->y * width + it->x] = '#';
+    map[it->y * width + it->x] = 'o';
   }
   // head, the last element in the vector
   map[snakeBody.back().y * width + snakeBody.back().x] = '@';
