@@ -13,9 +13,8 @@ Besides, it is to help practice makefile, cmake, and github functionalities. Fur
 Thank you!
 
 
-References:
+References
 https://codereview.stackexchange.com/questions/66481/snake-game-in-c
 https://www.programmersought.com/article/92824465319/
-
-The kbhit.h header file is based on the below reference:
+The kbhit.h header file is based on the below reference
 https://cboard.cprogramming.com/c-programming/63166-kbhit-linux.html
