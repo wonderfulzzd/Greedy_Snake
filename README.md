@@ -2,6 +2,9 @@ Greedy Snake Game
 ===============
 A teriminal-based pc game
 ===============
+
+![Icon](icon.png?raw=true "Icon")
+
 This is a greedy snake game running in a terminal.
 
 The purpose of this project is just to get familar with terminal interaction through C++ programming. 
