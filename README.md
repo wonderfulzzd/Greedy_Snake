@@ -5,14 +5,12 @@ A teriminal-based pc game
 
 ![Icon](icon.png?raw=true "Icon")
 
-This is a greedy snake game running in a terminal.
+This is a greedy snake game running in a terminal. It is the first greedy snake game program that supports both Windows and Linux! Try it out!
 
 The purpose of this project is just to get familar with terminal interaction through C++ programming. 
-Besides, it is to help practice makefile and github functionalities.
+Besides, it is to help practice makefile and github functionalities. Further improvements may be added gradually. 
 
-This is the first greedy snake game program that supports both Windows and Linux! Try it out!
-
-Further improvements may be added gradually. Thank you!
+Thank you!
 
 
 References:
