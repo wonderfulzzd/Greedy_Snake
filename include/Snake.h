@@ -101,6 +101,11 @@ class Snake
     void Move ();
 
     /*
+     * update the map
+     */
+    void UpdateMap ();
+
+    /*
      * print the map
      */
     void PrintMap ();
