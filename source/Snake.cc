@@ -87,8 +87,10 @@ void Snake::Init ()
   auto p = std::find(snakeBody.begin(), snakeBody.end(), food);
   while (p != snakeBody.end()) // not found
   {
-    food.x = udx(rex);
-    food.y = udy(rey);
+    food.x = std::rand() % (width - 3) + 1;
+    food.y = std::rand() % (height - 3) + 1;
+//    food.x = udx(rex);
+//    food.y = udy(rey);
     p = std::find(snakeBody.begin(), snakeBody.end(), food);
   }
   map[food.y * width + food.x] = '$';
@@ -122,8 +124,10 @@ void Snake::GenerateFood ()
 
     while (p != snakeBody.end()) // not found
     {
-      food.x = udx(rex);
-      food.y = udy(rey);
+      food.x = std::rand() % (width - 3) + 1;
+      food.y = std::rand() % (height - 3) + 1;
+//      food.x = udx(rex);
+//      food.y = udy(rey);
       p = std::find(snakeBody.begin(), snakeBody.end(), food);
     }
   }
@@ -147,21 +151,19 @@ void Snake::GetDirection ()
   }
   changemode(0);
 #elif _WIN32
-  void Snake::ChangeDirection ()
-  { //Get the direction button, use a direction to store
-    if (kbhit())
+  //Get the direction button, use a direction to store
+  if (kbhit())
+  {
+    char kbhitInput;
+    kbhitInput = getch();
+    if (kbhitInput == 'W' || kbhitInput == 'S' || kbhitInput == 'A'
+        || kbhitInput == 'D' || kbhitInput == 'w' || kbhitInput == 's'
+        || kbhitInput == 'a' || kbhitInput == 'd')
     {
-      char kbhitInput;
-      kbhitInput = getch();
-      if (kbhitInput == 'W' || kbhitInput == 'S' || kbhitInput == 'A'
-          || kbhitInput == 'D' || kbhitInput == 'w' || kbhitInput == 's'
-          || kbhitInput == 'a' || kbhitInput == 'd')
-      {
-        direction = kbhitInput;
-      }
+      direction = kbhitInput;
     }
   }
-  #endif
+#endif
 }
 
 /*

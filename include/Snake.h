@@ -56,7 +56,7 @@ class Snake
     Snake ();
 
     /*
-     * program-run function
+     * run function of the program
      */
     void Run ();
 
@@ -96,7 +96,7 @@ class Snake
     void GenerateFood ();
 
     /*
-     * change direction
+     * get moving direction
      */
     void GetDirection ();
 
@@ -114,7 +114,6 @@ class Snake
      * sleep for a while
      */
     void Sleep ();
-
 };
 
 #endif /* SNAKE_H_ */
