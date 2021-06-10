@@ -1,0 +1,68 @@
+# ---------------------------------------------------------------------
+#
+# Copyright (C) 2021 - 2021 by the Greedy snake authors
+#
+# makefile
+#
+# This file is part of the Greedy snake project.
+#
+# The Greedy snake is free software; you can use it, redistribute
+# it, and/or modify it under the terms of the GNU Lesser General
+# Public License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+# The full text of the license can be found in the file LICENSE.md at
+# the top level directory of LPBF.
+#
+# Author: Zhidong Brian Zhang
+# Created on: Jun.05 2021
+# Updated on: xxx.xx xxxx
+#
+# ---------------------------------------------------------------------
+
+TARGET=greedy-snake
+
+INC_DIR=include
+SRC_DIR=source
+OBJ_DIR=Debug
+BUILD_DIR=Debug
+
+SOURCES:=${wildcard ${SRC_DIR}/*.cc}
+INCLUDES:=${shell find ${INC_DIR} -name *.h}
+OBJECTS:=${patsubst ${SRC_DIR}/%.cc,${OBJ_DIR}/%.o,${SOURCES}}
+
+CXX=g++
+CXXFLAGS=-std=c++11 -Wall -Wextra -Werror -g -O0
+CXXFLAGS+=$(foreach d, ${INC_DIR}, -I./$d)  # Prefix -I./ to each include
+
+MAKEFLAGS=--output-sync=line # synchronized output for parallel make (e.g. make -j4)
+
+########################################################################
+.PHONY = all
+all: ${BUILD_DIR}/${TARGET}
+	@echo "SOURCES: " ${SOURCES}
+	@echo "INCLUDES: " ${INCLUDES}
+	@echo "OBJECTS: " ${OBJECTS}
+
+${BUILD_DIR}/${TARGET}: ${OBJECTS}
+	${CXX} -o $@ $^ ${CXXFLAGS}
+	@echo "### Linking complete! ###\n"
+
+${OBJ_DIR}/%.o: ${SRC_DIR}/%.cc
+#${OBJ_DIR}/%.o: ${SRC_DIR}/%.cc ${INCLUDES}
+	${CXX} -o $@ -c $< ${CXXFLAGS}
+	@echo "### Compiling complete! ###\n"
+
+########################################################################
+.PHONY = install
+install:
+	cp ${BUILD_DIR}/${TARGET} /usr/local/bin/
+
+########################################################################
+.PHONY = remove
+remove:
+	rm /usr/local/bin/${TARGET}
+
+########################################################################
+.PHONY = clean
+clean:
+	rm -rf ${BUILD_DIR}/${TARGET} ${OBJECTS}
