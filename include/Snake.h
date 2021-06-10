@@ -30,7 +30,6 @@
 #include <stdexcept>
 #include <chrono>
 #include <thread>
-#include <random>
 #include <algorithm>
 #include "Point.h"
 
@@ -75,10 +74,6 @@ class Snake
     Point food; // food location
     std::vector<char> map; // gaming domain map
     std::vector<Point> snakeBody; // gaming domain map
-    std::random_device rex; // x random number generator
-    std::random_device rey; // y random number generator
-    uniform_int_distribution<int> udx; // x
-    uniform_int_distribution<int> udy; // y
 
     /*
      * initialize the system

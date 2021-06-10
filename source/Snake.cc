@@ -31,9 +31,7 @@ Snake::Snake ()
       score(0),
       food(),
       map(width * height),
-      snakeBody(4, Point()),
-      udx(1, width - 1),
-      udy(1, height - 1)
+      snakeBody(4, Point())
 {
 }
 
@@ -82,15 +80,11 @@ void Snake::Init ()
   // initialize food
   food.x = std::rand() % (width - 3) + 1;
   food.y = std::rand() % (height - 3) + 1;
-//  food.x = udx(rex);
-//  food.y = udy(rey);
   auto p = std::find(snakeBody.begin(), snakeBody.end(), food);
   while (p != snakeBody.end()) // not found
   {
     food.x = std::rand() % (width - 3) + 1;
     food.y = std::rand() % (height - 3) + 1;
-//    food.x = udx(rex);
-//    food.y = udy(rey);
     p = std::find(snakeBody.begin(), snakeBody.end(), food);
   }
   map[food.y * width + food.x] = '$';
@@ -116,8 +110,6 @@ void Snake::GenerateFood ()
     // generate a new food
     food.x = std::rand() % (width - 3) + 1;
     food.y = std::rand() % (height - 3) + 1;
-//    food.x = udx(rex);
-//    food.y = udy(rey);
     auto p = std::find(snakeBody.begin(), snakeBody.end(), food);
 
     std::cout << "p!=snakeBody.end(): " << (p != snakeBody.end()) << std::endl;
@@ -126,8 +118,6 @@ void Snake::GenerateFood ()
     {
       food.x = std::rand() % (width - 3) + 1;
       food.y = std::rand() % (height - 3) + 1;
-//      food.x = udx(rex);
-//      food.y = udy(rey);
       p = std::find(snakeBody.begin(), snakeBody.end(), food);
     }
   }
