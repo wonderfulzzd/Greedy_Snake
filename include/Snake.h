@@ -10,8 +10,8 @@
 // it, and/or modify it under the terms of the GNU Lesser General
 // Public License as published by the Free Software Foundation; either
 // version 2.1 of the License, or (at your option) any later version.
-// The full text of the license can be found in the file LICENSE.md at
-// the top level directory of LPBF.
+// The full text of the license can be found in the file lesser.txt at
+// the top level directory of the project.
 //
 // Author: Zhidong Brian Zhang
 // Created on: Jun.05 2021

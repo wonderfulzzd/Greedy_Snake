@@ -10,8 +10,8 @@
 // it, and/or modify it under the terms of the GNU Lesser General
 // Public License as published by the Free Software Foundation; either
 // version 2.1 of the License, or (at your option) any later version.
-// The full text of the license can be found in the file LICENSE.md at
-// the top level directory of LPBF.
+// The full text of the license can be found in the file lesser.txt at
+// the top level directory of the project.
 //
 // Author: Zhidong Brian Zhang
 // Created on: Jun.05 2021
@@ -159,7 +159,7 @@ void Snake::Move ()
     score++;
   } else // not eat food
   {
-    for (auto it = snakeBody.begin(); it < snakeBody.end() - 1; ++it)
+    for (auto it = snakeBody.begin(); it < snakeBody.end() - 1; ++it) // exclude the head
     {
       it->x = (it + 1)->x; // replaced by its previous x member
       it->y = (it + 1)->y; // replaced by its previous y member
@@ -178,8 +178,7 @@ void Snake::UpdateMap()
     {
       if (i == 0 || i == width - 1 || j == 0 || j == height - 1)
       {
-        map[j * width + i] = '*';
-
+        map[j * width + i] = '*';  // for solid wall as "█", use char(219); console encoding of IBM850
       } else
       {
         map[j * width + i] = ' ';
