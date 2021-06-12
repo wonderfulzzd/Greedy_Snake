@@ -22,7 +22,7 @@
 #include "Snake.h"
 
 Snake::Snake ()
-    : sleepTime(500),
+    : sleepTime(200),
       width(20),
       height(20),
       direction('d'),
