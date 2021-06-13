@@ -32,7 +32,7 @@ PROJECT(greedy-snake)
 SET(CMAKE_VERBOSE_MAKEFILE off)
 
 # Compiler settings
-set(CMAKE_CXX_COMPILER "g++")
+SET(CMAKE_CXX_COMPILER "g++")
 SET(CMAKE_CXX_STANDARD 11)
 SET(CMAKE_CXX_FLAGS_DEBUG "-Wall -Wextra -Werror -g -O0") # debug flags
 SET(CMAKE_CXX_FLAGS_RELEASE "-Wall -Wextra -Werror -O3")  # release flags
